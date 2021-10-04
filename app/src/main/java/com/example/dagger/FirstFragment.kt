@@ -9,7 +9,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.dagger.application_graph.ApplicationGraph
 import com.example.dagger.application_graph.DaggerApplicationGraph
 import com.example.dagger.components.DaggerComponent
-import com.example.dagger.components.DaggerDaggerComponent
 import com.example.dagger.dagger_test.TestClass
 import com.example.dagger.dagger_test.TestUserClass
 import com.example.dagger.databinding.FragmentFirstBinding
@@ -48,7 +47,7 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        DaggerDaggerComponent.create().inject(this)
+        DaggerComponent.create().inject(this)
         val data = userRepository.getUserRemoteDataSource().getData()
 
         val test1 = userRepository.getUserLocalDataSource().getTest1()
